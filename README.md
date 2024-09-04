@@ -1,6 +1,6 @@
 # Rock, Paper & Scissors Game
 
-A simple Rock Paper Scissors game implemented in Swift.
+A simple Rock Paper Scissors game implemented in Swift and SwifUI.
 
 ## Features
 
