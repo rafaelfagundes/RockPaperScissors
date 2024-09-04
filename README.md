@@ -12,8 +12,10 @@ A simple Rock Paper Scissors game implemented in Swift and SwifUI.
 
 Here are some screenshots of the game in action:
 
+<div>
 <img src="screenshot_01.png" alt="Screenshot 1" width="300"/>
 <img src="screenshot_02.png" alt="Screenshot 2" width="300"/>
+</div>
 
 ## Requirements
 
