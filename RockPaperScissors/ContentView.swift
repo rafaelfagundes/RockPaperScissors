@@ -52,21 +52,19 @@ class HandSignItem {
 
 
 struct ContentView: View {
-    
     let rockItem: HandSignItem
     let paperItem: HandSignItem
     let scissorsItem: HandSignItem
     let allItems: [HandSignItem]
     
     @State var currentMachineItem: HandSignItem
+    @State var currentUserItem: HandSignItem?
     @State var matchOutcome: MatchOutcome?
-    
     @State var winCount: Int = 0
     @State var loseCount: Int = 0
-    
     @State var showMachineChoice: Bool = false
-    
-    @State var disableNewChoices: Bool = false
+    @State var disableNewActions: Bool = false
+    @State var showResetAlert: Bool = false
     
     
     init() {
@@ -80,45 +78,59 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                HStack {
-                    Text("Wins: \(winCount)")
+            ZStack{
+                Color(red: 2/255, green: 52/255, blue: 54/255).ignoresSafeArea()
+                VStack {
+                    Logo()
+                    ScoreBoard(winCount: winCount, loseCount: loseCount)
                     Spacer()
-                    Text("Losses: \(loseCount)")
-                }.padding(.vertical, 20)
-                Spacer()
-                Text(currentMachineItem.getName()).opacity(showMachineChoice ? 1 : 0)
-                Spacer()
-                if matchOutcome == .draw {
-                    Text("It's a Draw!").foregroundColor(.black).font(.largeTitle).bold()
-                } else if matchOutcome == .win {
-                    Text("You Win!").foregroundColor(.green).font(.largeTitle).bold()
-                } else if matchOutcome == .lose {
-                    Text("You Lose!").foregroundColor(.red).font(.largeTitle).bold()
-                }
-                Spacer()
-                HStack {
-                    Button("Rock") {
-                        handleHandSignButtonPressed(userItem: rockItem, machineItem: currentMachineItem)
-                    }.disabled(disableNewChoices)
+                    if showMachineChoice {
+                        HandSignChoice(name: currentMachineItem.getName(), isRotated: true)
+                    }
                     Spacer()
-                    Button("Paper") {
-                        handleHandSignButtonPressed(userItem: paperItem, machineItem: currentMachineItem)
-                    }.disabled(disableNewChoices)
+                    MatchOutcomeDisplay(matchOutcome: matchOutcome)
                     Spacer()
-                    Button("Scissors") {
-                        handleHandSignButtonPressed(userItem: scissorsItem, machineItem: currentMachineItem)
-                    }.disabled(disableNewChoices)
-                }
-                Spacer()
-                Button("Next Round") {
-                    handleNextRoundButtonPressed()
+                    if currentUserItem !== nil {
+                        HandSignChoice(name: currentUserItem!.getName(), isRotated: false)
+                    }
+                    Spacer()
+                    if (!disableNewActions){
+                        HStack {
+                            HandSignButtonView(text: rockItem.getName(), action: {
+                                handleHandSignButtonPressed(userItem: rockItem, machineItem: currentMachineItem)
+                            }, isDisabled: disableNewActions, backgroundImage: "button_square_depth_gradient_blue")
+                            
+                            HandSignButtonView(text: paperItem.getName(), action: {
+                                handleHandSignButtonPressed(userItem: paperItem, machineItem: currentMachineItem)
+                            }, isDisabled: disableNewActions, backgroundImage: "button_square_depth_gradient_green")
+                            
+                            HandSignButtonView(text: scissorsItem.getName(), action: {
+                                handleHandSignButtonPressed(userItem: scissorsItem, machineItem: currentMachineItem)
+                            }, isDisabled: disableNewActions, backgroundImage: "button_square_depth_gradient_red")
+                        }
+                    }
+                    
+                    if disableNewActions{
+                        HStack{
+                            ResetButton(action: {
+                                showResetAlert = true
+                            })
+                            Spacer()
+                            NextButton(action: handleNextRoundButtonPressed)
+                        }.padding()
+                    }
                 }
             }
-            .navigationTitle("Rock, Paper & Scissors")
-            .padding(.horizontal, 40)
+        }.alert(isPresented: $showResetAlert) {
+            Alert(
+                title: Text("Reset Game"),
+                message: Text("Are you sure you want to reset the game?"),
+                primaryButton: .destructive(Text("Reset")) {
+                    resetGame()
+                },
+                secondaryButton: .cancel()
+            )
         }
-        
     }
     
     
@@ -128,17 +140,25 @@ struct ContentView: View {
     }
     
     func handleNextRoundButtonPressed(){
+        playTapSound()
         showMachineChoice = false
         currentMachineItem = ContentView.getRandomItem(items: self.allItems)
         matchOutcome = nil
-        disableNewChoices = false
+        disableNewActions = false
+        currentUserItem = nil
     }
     
     func handleHandSignButtonPressed(userItem: HandSignItem, machineItem: HandSignItem){
+        currentUserItem = userItem
         matchOutcome = determineOutcome(user: userItem, machine: machineItem)
         updateScore(outcome: matchOutcome!)
         showMachineChoice = true
-        disableNewChoices = true
+        disableNewActions = true
+    }
+    
+    func playTapSound(){
+        let soundPlayer = SoundPlayer()
+        soundPlayer.playAudio(resource: "tap-a", withExtension: "wav")
     }
     
     func updateScore(outcome: MatchOutcome) {
@@ -158,6 +178,16 @@ struct ContentView: View {
             return MatchOutcome.win
         }
         return MatchOutcome.lose
+    }
+    
+    func resetGame(){
+        winCount = 0
+        loseCount = 0
+        currentUserItem = nil
+        currentMachineItem = ContentView.getRandomItem(items: self.allItems)
+        showMachineChoice = false
+        disableNewActions = false
+        matchOutcome = nil
     }
 }
 

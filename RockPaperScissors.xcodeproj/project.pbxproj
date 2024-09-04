@@ -11,6 +11,17 @@
 		537B631F2C86BB8200274C91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B631E2C86BB8200274C91 /* ContentView.swift */; };
 		537B63212C86BB8300274C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 537B63202C86BB8300274C91 /* Assets.xcassets */; };
 		537B63242C86BB8300274C91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 537B63232C86BB8300274C91 /* Preview Assets.xcassets */; };
+		537B632B2C877E8D00274C91 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B632A2C877E8D00274C91 /* SoundPlayer.swift */; };
+		537B63302C87831300274C91 /* tap-a.wav in Resources */ = {isa = PBXBuildFile; fileRef = 537B632F2C87831300274C91 /* tap-a.wav */; };
+		537B63322C8795BA00274C91 /* HandSignButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B63312C8795BA00274C91 /* HandSignButtonView.swift */; };
+		537B63362C87D1E500274C91 /* Kenney Future Narrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 537B63342C87D1E500274C91 /* Kenney Future Narrow.ttf */; };
+		537B63372C87D1E500274C91 /* Kenney Future.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 537B63352C87D1E500274C91 /* Kenney Future.ttf */; };
+		537B633A2C87E59500274C91 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B63392C87E59500274C91 /* ScoreBoard.swift */; };
+		537B633C2C87E70200274C91 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B633B2C87E70200274C91 /* Logo.swift */; };
+		537B633E2C87E77100274C91 /* HandSignChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B633D2C87E77100274C91 /* HandSignChoice.swift */; };
+		537B63402C87E8CE00274C91 /* MatchOutcomeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B633F2C87E8CE00274C91 /* MatchOutcomeDisplay.swift */; };
+		537B63422C87EA8300274C91 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B63412C87EA8300274C91 /* NextButton.swift */; };
+		537B63442C87EB6100274C91 /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B63432C87EB6100274C91 /* ResetButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,18 @@
 		537B631E2C86BB8200274C91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		537B63202C86BB8300274C91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		537B63232C86BB8300274C91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		537B632A2C877E8D00274C91 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		537B632F2C87831300274C91 /* tap-a.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "tap-a.wav"; sourceTree = "<group>"; };
+		537B63312C8795BA00274C91 /* HandSignButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSignButtonView.swift; sourceTree = "<group>"; };
+		537B63342C87D1E500274C91 /* Kenney Future Narrow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kenney Future Narrow.ttf"; sourceTree = "<group>"; };
+		537B63352C87D1E500274C91 /* Kenney Future.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kenney Future.ttf"; sourceTree = "<group>"; };
+		537B63382C87D21B00274C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		537B63392C87E59500274C91 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
+		537B633B2C87E70200274C91 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		537B633D2C87E77100274C91 /* HandSignChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSignChoice.swift; sourceTree = "<group>"; };
+		537B633F2C87E8CE00274C91 /* MatchOutcomeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOutcomeDisplay.swift; sourceTree = "<group>"; };
+		537B63412C87EA8300274C91 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		537B63432C87EB6100274C91 /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +74,10 @@
 		537B631B2C86BB8200274C91 /* RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				537B63462C87EC1100274C91 /* Utils */,
+				537B63452C87EBF500274C91 /* Components */,
+				537B63382C87D21B00274C91 /* Info.plist */,
+				537B63332C87D1CF00274C91 /* Other Assets */,
 				537B631C2C86BB8200274C91 /* RockPaperScissorsApp.swift */,
 				537B631E2C86BB8200274C91 /* ContentView.swift */,
 				537B63202C86BB8300274C91 /* Assets.xcassets */,
@@ -65,6 +92,38 @@
 				537B63232C86BB8300274C91 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		537B63332C87D1CF00274C91 /* Other Assets */ = {
+			isa = PBXGroup;
+			children = (
+				537B63342C87D1E500274C91 /* Kenney Future Narrow.ttf */,
+				537B63352C87D1E500274C91 /* Kenney Future.ttf */,
+				537B632F2C87831300274C91 /* tap-a.wav */,
+			);
+			path = "Other Assets";
+			sourceTree = "<group>";
+		};
+		537B63452C87EBF500274C91 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				537B63312C8795BA00274C91 /* HandSignButtonView.swift */,
+				537B63392C87E59500274C91 /* ScoreBoard.swift */,
+				537B633D2C87E77100274C91 /* HandSignChoice.swift */,
+				537B633B2C87E70200274C91 /* Logo.swift */,
+				537B63412C87EA8300274C91 /* NextButton.swift */,
+				537B63432C87EB6100274C91 /* ResetButton.swift */,
+				537B633F2C87E8CE00274C91 /* MatchOutcomeDisplay.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		537B63462C87EC1100274C91 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				537B632A2C877E8D00274C91 /* SoundPlayer.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +186,9 @@
 			files = (
 				537B63242C86BB8300274C91 /* Preview Assets.xcassets in Resources */,
 				537B63212C86BB8300274C91 /* Assets.xcassets in Resources */,
+				537B63372C87D1E500274C91 /* Kenney Future.ttf in Resources */,
+				537B63362C87D1E500274C91 /* Kenney Future Narrow.ttf in Resources */,
+				537B63302C87831300274C91 /* tap-a.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537B633E2C87E77100274C91 /* HandSignChoice.swift in Sources */,
+				537B63442C87EB6100274C91 /* ResetButton.swift in Sources */,
 				537B631F2C86BB8200274C91 /* ContentView.swift in Sources */,
+				537B632B2C877E8D00274C91 /* SoundPlayer.swift in Sources */,
+				537B63422C87EA8300274C91 /* NextButton.swift in Sources */,
+				537B633A2C87E59500274C91 /* ScoreBoard.swift in Sources */,
+				537B63322C8795BA00274C91 /* HandSignButtonView.swift in Sources */,
+				537B633C2C87E70200274C91 /* Logo.swift in Sources */,
+				537B63402C87E8CE00274C91 /* MatchOutcomeDisplay.swift in Sources */,
 				537B631D2C86BB8200274C91 /* RockPaperScissorsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +345,14 @@
 				DEVELOPMENT_TEAM = Z4C8UUAVUB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RockPaperScissors/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +377,14 @@
 				DEVELOPMENT_TEAM = Z4C8UUAVUB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RockPaperScissors/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
