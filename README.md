@@ -1,4 +1,4 @@
-# Rock Paper Scissors Game
+# Rock, Paper & Scissors Game
 
 A simple Rock Paper Scissors game implemented in Swift.
 
