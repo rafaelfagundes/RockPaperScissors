@@ -27,7 +27,7 @@ Here are some screenshots of the game in action:
 
 1. Clone the repository:
   ```sh
-  git clone https://github.com/yourusername/rock-paper-scissors.git
+  git clone https://github.com/rafaelfagundes/RockPaperScissors.git
   ```
 2. Open the project in Xcode:
   ```sh
